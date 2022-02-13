@@ -19,7 +19,7 @@
                     <a href="/">
                       <img class="logo" src="images/logo.svg" alt="Fylo logo">
                     </a>
-                        <nav class="flex-class">
+                        <nav class="flex-class align-itms-cntr">
                           <a href="">Features</a>
                           <a href="">Team</a>
                           <a href="">Sign In</a>
@@ -27,18 +27,22 @@
                   </header>
                       <img class="intro__img" src="images/illustration-intro.png" alt="intro img">
                 </div>
-                  <div class="curvy-bg">
-                    <img src="images/bg-curvy-mobile.svg" alt="">
-                  </div>
+
+          <div class="main__content color-white flex-class flex-center">
+            <div class="call-to-action-top flex-class flex-drct-col">
+                  <h1>All your files in one secure location, accessible anywhere.</h1>
+                        
+                  <p>Fylo stores all your most important files in one secure location. Access them wherever 
+                    you need, share and collaborate with friends family, and co-workers.</p> 
+                      
+                  <button class="main__content-btn">Get Started</button>
+            </div>
+          
+          </div>
                 <div class="main-wrapper-class">
-                      <div class="main__content color-white flex-class flex-drct-col">
-                          <h2>All your files in one secure location, accessible anywhere.</h2>
-                            <p>Fylo stores all your most important files in one secure location. Access them wherever 
-                            you need, share and collaborate with friends family, and co-workers.</p> 
-                            <button class="main__content-btn">Get Started</button>
-                        </div>
+                   
                         <!-- Features -->
-                              <div class="features color-white padding-2em flex-class">
+                              <div class="features color-white grid-class">
                                 <section>
                                   <img src="images/icon-access-anywhere.svg" alt="access anywhere img">
                                   <h3>Access your files, anywhere</h3>
@@ -66,18 +70,20 @@
                                   
                               </div>
                     <!-- Fylo Motto -->
-                    <div class="fylo_motto color-white padding-2em">
+                    <div class="fylo_motto color-white padding-2em grid-class">
                           <img class="fylo_motto-img" src="images/illustration-stay-productive.png" alt="illustration-stay-productive">
-                                  <h4>Stay productive, wherever you are</h4>
-                                  <br>
-                                  <p>Never let location be an issue when accessing your files. Fylo has you covered for all of your file 
-                                    storage needs.</p>
-                                    <br>
-                                  <p>Securely share files and folders with friends, family and colleagues for live collaboration. No email 
-                                    attachments required.</p>
-                            <a class="fylo_motto-action-item flex-class" href="">See how Fylo works
-                              <img src="/images/icon-arrow.svg" alt="">
-                            </a>
+                          <div class="fylo_motto-content">
+                                <h3>Stay productive, wherever you are</h3>
+                                      <br>
+                                      <p>Never let location be an issue when accessing your files. Fylo has you covered for all of your file 
+                                        storage needs.</p>
+                                        <br>
+                                      <p>Securely share files and folders with friends, family and colleagues for live collaboration. No email 
+                                        attachments required.</p>
+                                <a class="fylo_motto-action-item" href="">See how Fylo works
+                                  <img src="/images/icon-arrow.svg" alt="goto this link">
+                                </a>
+                          </div>
                     </div>      
                     <!-- Testimonials -->
                           <div class="testimonials flex-class">
@@ -116,33 +122,45 @@
                                     </div>
                               </div>
                           </div>
-                          <section class="section__cta flex-class">
-                            <div class="call-to-action color-white flex-class">
+                          <section class="section__cta">
+                            <div class="call-to-action-bottom color-white flex-class">
                               <h3>Get early access today</h3>
                                   <p>
                                     It only takes a minute to sign up and our free starter tier is extremely generous. If you have any 
                                     questions, our support team would be happy to help you.
                                   </p>
-                                  <input type="email" placeholder="email@example.com">
-                              <button>Get Started For Free</button>
+                                  <form class="form flex-class gap-1em">
+                                    <input type="email" placeholder="email@example.com">
+                                    <button>Get Started For Free</button>
+                                  </form>
                             </div>
                       </section>
                 </div>
-           
           </main>
+
 <footer class="footer">
   
       <div class="footer__details">
-          <img class="logo-footer" src="images/logo.svg" alt="fylo logo">
+        <img class="logo-footer" src="images/logo.svg" alt="fylo logo">
+          <div class="footer__wrapper grid-class">
 
-              <div class="footer__details-col1 contact-info color-white grid-class">
-                      <img src="images/icon-location.svg" alt="icon-location">
-                <p class="info-location">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                  dolore magna aliqua</p>
-                      <img src="images/icon-phone.svg" alt="icon-phone">
-                  <p class="info-phone">+1-543-123-4567</p>
-                      <img src="images/icon-email.svg" alt="icon-email">
-                  <a class="info-email" href="">example@fylo.com</a>
+              <div class="footer__details-col1 color-white grid-class">
+                    <div class="location grid-class grid-drct-col col_gap-1em">
+                          <img class="icon-location" src="images/icon-location.svg" alt="icon-location">
+                        <span class="info-location">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                          dolore magna aliqua</span>
+                    </div>      
+                          <div class="contact-info">
+                              <div class="phone grid-class grid-drct-col col_gap-1em">
+                                <img class="icon-phone" src="images/icon-phone.svg" alt="icon-phone">
+                                <span class="info-phone">+1-543-123-4567</span>
+                              </div>
+
+                              <div class="email grid-class grid-drct-col col_gap-1em">
+                                <img class="icon-email" src="images/icon-email.svg" alt="icon-email">
+                                <a class="info-email" href="">example@fylo.com</a>
+                              </div>
+                          </div>
               </div>
         
               <ul class="footer__details-col2 grid-class gap-1em">
@@ -162,11 +180,12 @@
                           <a href=""><div class="flex-class circles"><i class="fab fa-instagram"></i></div></a>
                         </div>
       </div>
-
+    </div>
     <p class="attribution color-white">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
       Coded by <a href="#">Muralidhar</a>.
     </p>
-</footer>
-</body>
+   </footer>
+  <script src="script.js"></script>
+ </body>
 </html>
