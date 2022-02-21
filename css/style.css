@@ -49,17 +49,17 @@
 /* Styling */
 html{
     font-size: 14px;
-    height: 100%;
     width: 100%;
 }
 body{
     background: var(--clr-primary-200);
+    display: inline-block;
 }
 h1,h2,h3,h4{
     font-family: var(--ff-header);
 }
 h1{
-    font-size: 2.5rem;
+    font-size: max(1.5rem,2.5vw);
 } 
 h3{
     font-size: 1.4rem;
@@ -126,7 +126,7 @@ nav a:hover{
 /* intro */
 .intro{
     padding: 2em 1em 0 1em;
-  
+
 }
 .intro__img{
     margin: 0 auto 5em auto;
@@ -144,7 +144,7 @@ nav a:hover{
     gap: 2em;
 }
 .call-to-action-top p{
-    font-size: clamp(1rem,1.8rem,2rem);
+    font-size: max(1rem,1.3vw);
 }
 .call-to-action-top button{
     font-size: 1rem;
@@ -154,7 +154,7 @@ nav a:hover{
 /* main */
 .main-wrapper-class{
     background: var(--clr-primary-300);
-    padding: 0 1em 0 1em;
+    padding: 3em 1em 0 1em;
 }
 /* Features */
 .features{
@@ -171,10 +171,19 @@ nav a:hover{
     gap: 2em;
     grid-auto-columns: 1fr;
 }
+a.fylo_motto-action-item::after{
+    content: url("../images/icon-arrow.svg");
+}
 a.fylo_motto-action-item{
     padding-bottom: .5em;
     color: var(--clr-accent-cyan);
     border-bottom: 1px solid var(--clr-accent-cyan);
+    width: 20ch;
+}
+a.fylo_motto-action-item:focus, a.fylo_motto-action-item:focus
+a.fylo_motto-action-item::after{
+    border-color: var(--clr-neutral);
+    color: var(--clr-neutral);
 }
 /* testimonial */
 .testimonials{
@@ -222,10 +231,26 @@ a.fylo_motto-action-item{
 .form{
     width: 100%;
 }
+.cta__error-message {
+    display: none;
+    padding-left: 0.875rem;
+    text-align: left;
+    color: #ff4242;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  
+  .cta__email:focus:invalid ~ .placeholder .cta__error-message {
+    display: block;
+  }
+  .placeholder {
+    position: absolute;
+    font-family: var(--ff-body);
+    bottom: 2rem;
+}
 /* footer */
 footer{
     background: var(--clr-primary-400);
-    padding: min;
 }
 .footer__details{
     padding: 15em 1em 1em;
@@ -267,22 +292,31 @@ i:hover,
 .attribution { font-family: var(--ff-header); font-size: 1rem; text-align: center; }
 .attribution a { color: var(--clr-accent-blue); }
 /* media screens */
+@media screen and (max-width: 400px) {
+    .intro{
+        background:url("../images/bg-curvy-mobile.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom;
+    }
+   
+}
+@media screen and (min-width: 400px) {
+    .intro{
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-image: url("../images/bg-curvy-desktop.svg") ;
+        background-position: bottom;
+    }
+}
 @media screen and (max-width: 700px) {
     /* navigation bar */
     .logo{
         width: 85px;
     }
-    .intro{
-        padding: 2em 1em 0 1em;
-    }
     nav{
         font-size: .8rem;
         gap: 2em; 
-    }
-    .main__content{
-        background-size: 100% ;
-        background-image: url("../images/bg-curvy-mobile.svg");
-        background-repeat:  no-repeat;
     }
     input::placeholder{
         text-align: center;
@@ -290,17 +324,14 @@ i:hover,
     .testimonials{
         gap: .8em;
     }
+    .call-to-action-bottom > p{
+        padding-bottom: 1em;
+    }
 }
 
 @media screen and (min-width: 700px) {
-    .main__content{
-        background-image: url("../images/bg-curvy-desktop.svg");
-        background-repeat:  no-repeat;
-        background-size: 100% 100%;
-    }
-    .call-to-action-top{
-        position: relative;
-        transform: translateY(-15%);
+    .intro{
+        padding: 5em 5em 0 5em;
     }
     .form input{
         flex-grow: 2;
@@ -308,14 +339,13 @@ i:hover,
     .testimonials{
         gap: 3em;
     }
+   
 }
 @media screen and (min-width:1000px){
     nav{
         gap: 3em;
     }
-    .intro{
-        padding: 5em 5em 0 5em;
-    }
+ 
     .main__content{
         padding: 0 25% 10em 25%;
     }
@@ -351,5 +381,11 @@ i:hover,
     .form button{
         padding: 1em 3em;
     }
+    .call-to-action-bottom p{
+        padding-bottom: 1em;
+    }
     .footer__details-col1{ gap: 1em; }
+    .placeholder{
+        bottom: 11rem;
+    }
 }
